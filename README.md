@@ -16,7 +16,7 @@ We aim to follow the principles set down by Loot:
 A Map NFT is made up of three parts:
 
 * ID (Number) - Each map has a unique identifier (integer)
-* Image (svg) - Each map has a unique image representing its layout in pixel art.
+* Image (svg) - Each map has a unique image representing its layout.
 * Metadata - Each map has metadata representing it which can be accessed from getters on the smart contract: 
 * a. id (int) - The ID of the map 
 * b. layout (string) - A string representing walls, walkable floor, interactable objects (e.g. doors), and points of interest. 
@@ -30,13 +30,15 @@ Maps are always square (e.g. 10x10) and can be any size > 4x4.
 
 Maps must contain at least one 'walkable' area that is at least 2 tiles.
 
-Maps contain a list of 'tiles' which have different charactertics:
+Maps contain a list of 'tiles' which have different characteristics:
 * Walls: Represented by '0'
 * Floors: Represented by '1' (where players can walk and move around)
 * Points: Represented by '2'
-* Doors/Encounters: Represented by '3'
+* Encounters: Represented by '3'
 
 Maps have a name (e.g. 'Den of the Twins') to give each one a sense of permanence. Some names will be repeated across the ecosystem, which is ok.
+
+Maps have an environment (e.g. '2') to give a sense of ambiance. This is akin to a 'tileset' in 2D RPG's.
 
 Developers can choose to ignore any of the above attributes and use whatever is useful.
 
@@ -69,7 +71,7 @@ We expect most developers will want to create a 2D array containing to represent
 ```
 Would generate:
 
-![Example map](https://github.com/threepwave/dungeons/raw/names/images/array-example.png)
+![Example map](https://github.com/threepwave/loot-maps/raw/main/images/array-example.png)
 
 You can generate a 2D array from the getLayout() int by looping through the integer, character-by-character.
 
@@ -113,7 +115,7 @@ We'll use this dungeon for all examples below:
 ]
 ````
 
-![API Example](https://github.com/threepwave/dungeons/raw/names/images/api-example.png)
+![API Example](https://github.com/threepwave/loot-maps/raw/main/images/api-example.png)
 
 
 ### Map Geometry
